@@ -74,3 +74,6 @@ Copy from another image
 ```
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /bin
 ```
+
+Adding to dev dependencies ignores install on docker:
+uv add --dev pgcli

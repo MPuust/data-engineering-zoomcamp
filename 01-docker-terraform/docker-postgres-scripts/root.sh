@@ -5,7 +5,7 @@ mkdir -p ../ny_taxi_postgres_data
 
 echo "Starting PostgreSQL container..."
 
-docker run -it \
+docker run -it --rm \
   -e POSTGRES_USER="root" \
   -e POSTGRES_PASSWORD="root" \
   -e POSTGRES_DB="ny_taxi" \
