@@ -17,3 +17,28 @@ docker run -it --rm \
 
 # to use the pgcli
 # pgcli -h localhost -p 5432 -u root -d ny_taxi
+
+
+
+docker run -it --rm \
+  --network=pg-network \
+  taxi_ingest:v001 \
+  --year=2021 \
+  --month=1 \
+  --pg-user=root \
+  --pg-pass=root \
+  --pg-host=pgdatabase \
+  --pg-port=5432 \
+  --pg-db=ny_taxi \
+  --chunk-size=100000 \
+  --target-table=yellow_taxi_trips
+
+
+  docker run -it --rm \
+  -e PGADMIN_DEFAULT_EMAIL="admin@admin.com" \
+  -e PGADMIN_DEFAULT_PASSWORD="root" \
+  -v pgadmin_data:/var/lib/pgadmin \
+  -p 8085:80 \
+  --network=pg-network \
+  --name pgadmin \
+  dpage/pgadmin4

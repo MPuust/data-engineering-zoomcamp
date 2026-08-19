@@ -77,3 +77,13 @@ COPY --from=ghcr.io/astral-sh/uv:latest /uv /bin
 
 Adding to dev dependencies ignores install on docker:
 uv add --dev pgcli
+
+PG admin
+http://localhost:8085/browser/
+
+When adding new server in PGadmin:
+Host name/address: pgdatabase
+Port: 5432
+Maintenance database: ny_taxi
+Username: root
+Password: root
